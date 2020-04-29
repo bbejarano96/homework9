@@ -1,0 +1,106 @@
+Bryan Bejarano
+Week #9 Part 2
+
+----------------------------------------------------------------------
+
+1. 
+- The Web Storage API permits applications to store data within an individual user's browser.
+
+2. 
+- Application data had to be stored in cookies.
+
+3. 
+- Storage interface: permits you to set, retrieve, and remove data for a specific domain and storage type; local or session.
+
+- Window Interface: Web Storage API extends the global Window object with the Window.sessionStorage and Window.localStorage properties. These properties
+provide access to the current domain session and local Storage objects.
+
+- StorageEvent Interface: the storage event is fired on a document's Window object
+when a storage type or data changes.
+
+4. 
+- Storage.length: the length property returns an integer representing the number of data items stored in the Storage object.
+
+- The Storage object can be represented by either the localStorage object or the
+sessionStorage object.
+
+5. 
+- No
+
+6. 
+- Cookies
+- Popular because they allow sites to store user data
+directly into the user's Web browser.
+- Mostly for server-side reading.
+
+7. 
+- Cookies can be made secure by setting the httpOnly flag as true for that cookie. This prevents client-side access to that cookie.
+
+8. 
+- The httpOnly flag blocks access of a cookie from the client-side and therefore JavaScript code.
+
+- That would mitigate the negative impact of the XSS attack.
+
+9. 
+- Web Storage is connected to a particular origin (domain and protocol). All pages from one origin, can store and access the same data.
+
+10. 
+- Permits you to set, retrieve and remove data for a specific domain and storage type.
+
+11.
+- 
+the length property returns an integer representing the number of data items stored in the Storage object.
+
+function populateStorage() {
+    localStorage.setItem('bgcolor', 'yellow');
+    localStorage.setItem('font', 'Helvetica');
+    localStorage.setItem('image', 'cats.png');
+
+    localStorage.length; // Should return 3
+}
+
+
+12. 
+- Storage.clear() : when invoked, will empty all keys out of storage
+ex.
+- Storage.removeItem() : when passed a key name will remove that key from the
+storage. If not iten is associated with the given
+key than this method will do nothing
+ex.
+- Storage.setItem() : when passed a key name and value will add that key to the
+storage/update that key&#39;s value if it already exists.
+ex.
+- Storage.getItem() : when passed a key name will return that key&#39;s value or null is
+the key is non-existent
+ex.
+
+- Storage.key() : when passed a certain number represented by n, this method
+returns the name of the nth key in the storage.
+ex.
+
+13. 
+-The secure flag attribute allows you to forbid a cookie to be transmitted over HTTP. It will only be transmitted through HTTPS.
+
+14. 
+- sessionStorage is similar to localStorage ; the difference is that while data in localStorage doesn't expire, data in sessionStorage is cleared when the page session ends. A page session lasts as long as the browser is open, and survives over page reloads and restores.
+
+15. 
+- localStorage and sessionStorage accomplish the exact same thing and have the same API.
+
+16.
+-try...catch statement marks a block of statements to try out code and specifics aresponse if an exception is thrown.
+
+17.
+- If there is a sessionStorage support, the program steps into the else statement. There we set and get our sessionStorage with checking if we have exceeded the sessionStorage quota. Because the exception needs to be catched. the try...catch statement must be used.
+
+18.
+- JSON.stringify() method converts a JavaScript object or value to a JSON string.
+const csv = JSON.stringify(sessionStorage['autosave']);
+
+19.
+-JSON.stringify
+We need to take the sessionStorage object's autosave property's value and extract it from sessionStorage and transform the value into a string so that we may insert it into a .txt file. The value of the sessionStorage key would not be readable.
+
+20.
+-session.js:10 Hello! I love JavaScript, and I prefer sessionStorage. How about you? ??
+cons
